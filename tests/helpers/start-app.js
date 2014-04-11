@@ -1,4 +1,3 @@
-import Application from 'appkit/app';
 import Router from 'appkit/router';
 
 function startApp(attrs) {
@@ -16,7 +15,7 @@ function startApp(attrs) {
   });
 
   Ember.run(function(){
-    App = Application.create(attributes);
+    App = require('appkit/main')['default']('appkit', attributes);
     App.setupForTesting();
     App.injectTestHelpers();
   });
